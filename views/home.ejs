@@ -1,0 +1,14 @@
+<%- include ("partials/header") -%>
+
+<h1>Home</h1>
+<p><%=startingContent%></p>
+<% posts.forEach(el => { %>
+    <h2><%=el.title%></h2>
+    <p>
+        <%=_.truncate(el.content, {"length": 100})%>
+        <a href="/posts/<%=el.title%>">Read More</a>
+    </p>
+<% }); %> 
+<button class="btn btn-primary"><a class="compose-a-tag" href="/compose" >New Post</a></button>
+
+<%- include ("partials/footer") -%>
